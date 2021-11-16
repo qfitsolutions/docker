@@ -1,0 +1,21 @@
+pipeline {
+   agent {label 'docker-label'}
+
+    // tools {
+    //     // Install the Maven version configured as "M3" and add it to the path.
+    //     tool name: 'Dock', type: 'dockerTool'
+    // }
+
+    stages {
+        stage('Build') {
+            steps {
+               
+                git 'https://github.com/qfitsolutions/docker.git'
+
+                sh '/usr/bin/docker build -t web:latest .'
+
+               
+            }
+        }
+    }
+}
