@@ -1,7 +1,7 @@
 import time
 
 import redis
-from flask import Flask
+from import Flask
 
 
 app = Flask(__name__)
